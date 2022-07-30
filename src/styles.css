@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --green-button-1: #1DE959;
+
+
+
+  --blue: #1e90ff;
+  --white: #ffffff;
+
+
+  
+}
+
+body { 
+  font-family: monospace, "Helvetica Neue", sans-serif;
+ }
+
+ .flex {
+  display: flex;
+ }
+
+ .flexColumn {
+  display: flex;
+  flex-direction: column;
+ }

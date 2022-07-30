@@ -1,0 +1,24 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header{
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.page{
+  height: 58vw;
+  width: 100%;
+}
+
+.footer{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}

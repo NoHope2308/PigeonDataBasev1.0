@@ -1,0 +1,16 @@
+.home-page{
+  /* background-image: url('../../assets/images/_104613338_gettyimages-461496547.jpg'); */
+  width: 100%; 
+  height:80%;
+}
+.title{
+  top: 50%;
+  left: 20%;
+  background-color: red;
+  z-index: 1;
+  position: absolute;
+}
+.carousel{
+  position: relative;
+  z-index: 0;
+}
