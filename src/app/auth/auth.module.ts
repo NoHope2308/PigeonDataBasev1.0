@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {MatButtonModule} from '@angular/material/button';
 import { ComponentsModule } from '../components/components.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ComponentsModule } from '../components/components.module';
   imports: [
     CommonModule,
     MatButtonModule,
-    ComponentsModule
+    ComponentsModule,
+    MatIconModule
   ],
   exports: [
     LoginComponent,

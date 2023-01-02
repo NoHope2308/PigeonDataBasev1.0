@@ -1,15 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CarouselNewComponent } from './carousel-new/carousel-new.component';
+import { SocialMediaComponent } from './social-media/social-media.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
-    CarouselNewComponent
+    CarouselNewComponent,
+    SocialMediaComponent
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    MatIconModule
+  ],
   exports: [
-    CarouselNewComponent
+    CarouselNewComponent,
+    SocialMediaComponent
   ],
   bootstrap: []
 })

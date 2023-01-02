@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComponentsModule } from './components/components.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -30,6 +31,8 @@ import { ComponentsModule } from './components/components.module';
     BrowserAnimationsModule,
     MatButtonModule,
     NgbModule,
+    MatIconModule
+
   ],
   exports:[
     AppComponent,
