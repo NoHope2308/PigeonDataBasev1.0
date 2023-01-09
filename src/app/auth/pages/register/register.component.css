@@ -1,6 +1,3 @@
-.carousel{
-  width: 70%;
-}
 .form-control {
   width: 30%;
   height: 100%;
@@ -21,4 +18,12 @@
 
 .h3 {
   font-family: monospace;
+}
+
+.logInButton {
+  border: 1px solid var(green-button-1);
+}
+
+.logInButton :hover {
+  background-color: var(green-button-1);
 }

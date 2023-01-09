@@ -3,6 +3,6 @@
   height: 100%;
   background-color: #e2e9e9ae;
 }
-.btn{
- 
+.title{
+  cursor: pointer;
 }

@@ -1,25 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthRoutingModule } from './auth/auth.routing';
-
-
-import { HomeComponent } from './home/home.component';
-import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
-
-
-
 
 const routes: Routes = [
- { path: 'home', component: HomeComponent},
- { path: '', redirectTo: '/home', pathMatch: 'full'},
- { path: '**', component: NoPageFoundComponent}
-
+  { 
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+  },
+  { 
+    path: 'dashboard',
+    loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule),
+  } 
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
-    AuthRoutingModule
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })
