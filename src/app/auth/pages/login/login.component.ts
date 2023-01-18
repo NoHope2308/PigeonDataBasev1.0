@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../../sevices/auth.service';
+import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -24,7 +24,9 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    //console.log(this.myForm.value);
+    this.authService.validateToken()
+    .subscribe( res => console.log(res))
+
     const {email, password} = this.myForm.value;
 
     this.authService.login( email, password)
@@ -35,10 +37,7 @@ export class LoginComponent implements OnInit {
       } else {
         alert(res)
       }
-
     })
-
-    
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-carousel-new',
@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel-new.component.css'],
 })
 
-export class CarouselNewComponent implements OnInit {
+export class CarouselNewComponent implements OnInit, OnDestroy {
   
+  slides: HTMLCollectionOf<HTMLElement> | undefined;
   slideIndex:number = 0;
   
   constructor() {}
@@ -17,18 +18,28 @@ export class CarouselNewComponent implements OnInit {
   }
  
   showSlides() {
-        
-    
-    let slides = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
+    this.slides = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
     let i;
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-    }
-    this.slideIndex++;
-    if (this.slideIndex > slides.length) {this.slideIndex = 1}    
-    slides[this.slideIndex-1].style.display = "block";  
-    setTimeout(() => {
-      this.showSlides();
-    }, 5000);   
+
+    if (this.slides) {
+      for (i = 0; i < this.slides.length; i++) {
+        if( this.slides[i] ) {
+          this.slides[i].style.display = "none";
+        }  
+      }
+      this.slideIndex++;
+      if (this.slideIndex > this.slides.length) {this.slideIndex = 1} 
+      if( this.slides[this.slideIndex-1] ) {
+        this.slides[this.slideIndex-1].style.display = "block";
+      }       
+      setTimeout(() => {
+        this.showSlides();
+      }, 5000);
+    }  
+  }
+
+  ngOnDestroy(): void {
+    this.slides = undefined;
+    
   }
 }

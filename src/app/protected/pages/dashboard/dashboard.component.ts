@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../auth/sevices/auth.service';
+import { AuthService } from '../../../auth/service/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +20,8 @@ export class DashboardComponent implements OnInit {
   }
 
   logOut() {
-    this.router.navigateByUrl('/home')
+    this.authService.logOut();
+    this.router.navigateByUrl('/home');
   }
 
 }
