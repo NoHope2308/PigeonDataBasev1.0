@@ -3,11 +3,16 @@
     <div class="title" >
       <h1 routerLink="/home">Pigeon DataBase</h1>
     </div>
-    <div class="flex">
+    <div *ngIf="!user.name" class="flex">
       <app-social-media></app-social-media>
       <button class="btn" routerLink="/auth/login"> <a>Login</a></button>
       <button class="btn" routerLink="/auth/register"><a>Register</a></button>
     </div>
+    <div *ngIf="user.name" class="flex align-center">
+      <div> Hello {{ user.name }}</div>
+      <button class="btn" style="width: fit-content;"><a>Add Pigeon</a></button>
+    </div>
+    
    
   </div>
 </section>

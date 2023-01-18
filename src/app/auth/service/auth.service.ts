@@ -91,6 +91,11 @@ export class AuthService {
   }
 
   logOut() {
+    this._user = {
+      name : null,
+      uid : null,
+      phone : null
+    }
     localStorage.clear();
   }
 }

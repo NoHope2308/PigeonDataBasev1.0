@@ -10,7 +10,7 @@ export interface AuthResponse {
 }
 
 export interface User {
-  uid: string,
-  name: string,
-  phone: number
+  uid: string | null,
+  name: string | null,
+  phone: number | null
 }
